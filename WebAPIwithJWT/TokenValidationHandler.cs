@@ -80,11 +80,8 @@ namespace WebAPIwithJWT
             SecurityToken securityToken, 
             TokenValidationParameters validationParameters)
         {
-            if (expires != null)
-            {
-                if (DateTime.UtcNow < expires) return true;
-            }
-            return false;
+            if (expires == null) return false;
+            return DateTime.UtcNow < expires;
         }
 
     }
