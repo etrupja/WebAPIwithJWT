@@ -14,6 +14,10 @@ namespace WebAPIwithJWT
             // Web API routes
             config.MapHttpAttributeRoutes();
 
+
+            //Web API routes
+            config.MessageHandlers.Add(new TokenValidationHandler());
+
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",

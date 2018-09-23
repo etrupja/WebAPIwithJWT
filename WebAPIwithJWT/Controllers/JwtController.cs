@@ -21,7 +21,7 @@ namespace WebAPIwithJWT.Controllers
         public IHttpActionResult Authenticated() => Ok("Authenticated");
 
         [HttpGet]
-        [Route("Unauthorized")]
+        [Route("notok")]
         public IHttpActionResult NotAuthenticated() => Unauthorized();
 
 
@@ -73,7 +73,7 @@ namespace WebAPIwithJWT.Controllers
 
 
             //Create the jwt (JSON Web Token)
-            //Replace the issues and audience with your URL (ex. http:localhost:12345)
+            //Replace the issuer and audience with your URL (ex. http:localhost:12345)
             var token =
                 (JwtSecurityToken)
                 tokenHandler.CreateJwtSecurityToken(
